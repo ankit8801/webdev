@@ -107,3 +107,23 @@ noBtn.addEventListener("click", () => {
 yesBtn.addEventListener("click", () => {
     window.location.href = "yes_page.html";
 });
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.classList.add("heart");
+    document.body.appendChild(heart);
+
+    const randomX = Math.random() * window.innerWidth;
+    heart.style.left = `${randomX}px`;
+    const duration = Math.random() * 4 + 3;
+    heart.style.animation = `floatHearts ${duration}s linear Infinity`;
+    
+    setTimeout(()=> {
+        heart.remove();
+
+    },duration* 1000);
+
+    setInterval(createHeart,1000);
+
+}
