@@ -93,7 +93,7 @@ noBtn.addEventListener("click", () => {
 
         // Enlarge "Yes" button slightly each time
         let currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-        yesBtn.style.fontSize = (currentSize + 5) + "px";
+        yesBtn.style.fontSize = (currentSize + 20) + "px";
     }
 
     // Enable "Yes" button after a few clicks
@@ -102,11 +102,16 @@ noBtn.addEventListener("click", () => {
         yesBtn.classList.add("enabled");
     }
 });
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
 
 // Clicking "Yes" redirects to yes_page.html
 yesBtn.addEventListener("click", () => {
     window.location.href = "yes_page.html";
-});
+
 
 function createHeart() {
     const heart = document.createElement("div");
@@ -127,3 +132,4 @@ function createHeart() {
     setInterval(createHeart,1000);
 
 }
+});
